@@ -1,0 +1,58 @@
+"use strict";
+
+//		javascript code
+//		script_name: makeBeat101.js
+//
+//		author: Vivian Wang
+//		description: jams in a can 2020
+//
+
+init();
+setTempo(120);
+// 0 starts playing the best
+// + sign extends the beat
+// - stop the beat
+// for javascript, you don't really need javascript for the var beat
+
+
+//var beat = "0-00+00-0+++0+0+";
+//var drum = ELECTRO_DRUM_MAIN_BEAT_008;
+//makeBeat(audio, which track, where to start, beat)
+//makeBeat(drum, 1, 1, beat);
+
+
+var beat = "0++0-000+0-00-0+";
+var drum = COMMON_LOVE_DRUMBEAT_1;
+//for (var i = 0, i < stop, i++) { what you are looping }
+for (var measure = 1; measure < 15; measure++)
+{
+  makeBeat(drum, 2, measure, beat);
+}
+
+fitMedia(TECHNO_LOOP_PART_025, 3, 1, 10);
+//setEffect(1, VOLUME, GAIN, -8);
+setEffect(2, VOLUME, GAIN, -60, 1, 0, 3)
+//setEffect(which track, VOLUME, 
+//GAIN, what volume to start at,
+// where to start, 
+//what volume to stabilize to, where to end)
+
+var b = "0++0-000+0-00-0+";
+var clap = RD_POP_BRIGHTLEAD_1;
+for (var m = 10; m < 15; m++)
+{
+  makeBeat(clap, 1, m, b);
+}
+
+var theBeat = "0++0-000+0-00-0+";
+var beat2 = "0-+0-+00+0-00-0+";
+var c = RD_POP_KEYPLUCK_1;
+var otherSound = RD_POP_BRIGHTLEAD_2;
+for (var i = 14; i < 22; i++)
+{
+  makeBeat(c, 3, i, theBeat);
+  makeBeat(otherSound, 4, i+4, beat2);
+  setEffect(3, VOLUME, GAIN, -60, 1, 0, 5);
+}
+
+finish();
